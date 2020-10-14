@@ -1,0 +1,79 @@
+{
+    "name": "0516-final_exp-bf=f",
+    "n_gpu": 1,
+
+    "arch": {
+        "type": "HarmonicVAE",
+        "args": {
+            "input_size": 256,
+            "latent_dim": 8,
+            "decoding": "cat",
+            "encode_mfcc": true,
+            "pitch_embedding": "onehot",
+            "learn_pitch_emb": true,
+            "gumbel": true,
+            "temperature": 1,
+            "min_temperature": 0.5,
+            "hard_gumbel": true,
+            "decay_rate": 0.00346,
+            "use_hp": false,
+            "hp_share": false,
+            "bn": "after",
+            "decoder_arch": "wide",
+            "act": "tanh"
+        }
+    },
+    "data_loader": {
+        "type": "SOL_Dataloader",
+        "args":{
+            "path_to_data": "data/audio/audio/",
+            "batch_size": 256,
+            "shuffle": true,
+            "validation_split": 0.1,
+            "num_workers": 0,
+            "target_ext": ".npy",
+            "split": 0 
+        }
+    },
+    "optimizer": {
+        "type": "Adam",
+        "args":{
+            "lr": 0.0001,
+            "weight_decay": 0,
+            "amsgrad": true
+        }
+    },
+    "loss": {
+        "type": "nr_vae_elbo",
+        "args": {
+            "pretrain_step": 0,
+            "w_recon": 10,
+            "w_kl": 1,
+            "w_lmse": 0,
+            "w_contrast": 0, 
+            "w_cycle": 1, 
+            "w_pseudo": 0 
+        }
+    },
+    "metrics": [
+        "f1", "cluster_acc", "nmi"
+    ],
+    "FID_clfr": "/data/yinjyun/projects/nr-gmvae-single-frame/old_result/models/0423-clfr/t=instrument/0423_095206/model_best.pth",
+    "trainer": {
+        "seed":  4,
+        "epochs": 3000,
+        "labeled": 0.0,
+        "pseudo_train": true,
+        "freeze_encoder": false,
+        "pitch_shift": 2,
+
+        "save_dir": "saved_final/",
+        "save_period": 3000,
+        "verbosity": 2,
+        
+        "monitor": "min val_loss",
+        "early_stop": 300,
+
+        "tensorboard": true 
+    }
+}

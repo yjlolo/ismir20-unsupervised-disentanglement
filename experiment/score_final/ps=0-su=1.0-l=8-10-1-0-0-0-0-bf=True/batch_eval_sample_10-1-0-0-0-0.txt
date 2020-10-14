@@ -1,0 +1,25 @@
+saved_final/models/0514-final_exp/ps=0-su=1.0-l=8-10-1-0-0-0-0-bf=True/ms=4-ps=0-su=1.0-l=8-10-1-0-0-0-0-bf=True
+saved_final/models/0514-final_exp/ps=0-su=1.0-l=8-10-1-0-0-0-0-bf=True/ms=1-ps=0-su=1.0-l=8-10-1-0-0-0-0-bf=True
+saved_final/models/0514-final_exp/ps=0-su=1.0-l=8-10-1-0-0-0-0-bf=True/ms=3-ps=0-su=1.0-l=8-10-1-0-0-0-0-bf=True
+saved_final/models/0514-final_exp/ps=0-su=1.0-l=8-10-1-0-0-0-0-bf=True/ms=2-ps=0-su=1.0-l=8-10-1-0-0-0-0-bf=True
+saved_final/models/0514-final_exp/ps=0-su=1.0-l=8-10-1-0-0-0-0-bf=True/ms=0-ps=0-su=1.0-l=8-10-1-0-0-0-0-bf=True
+{
+  "fid_recon": [
+    22.139873105594575,
+    20.16062463112769,
+    23.09368384347374,
+    22.54032353104418,
+    21.083936651814156
+  ],
+  "fid_rand": [
+    25.717757170484447,
+    23.413345573503534,
+    24.85087784578883,
+    23.586011003493923,
+    21.38124492472872
+  ]
+}
+{
+  "fid_recon": 21.80368835261087,
+  "fid_rand": 23.789847303599892
+}

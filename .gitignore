@@ -1,0 +1,16 @@
+__pycache__/
+*.swp
+
+
+# Jupyter Notebook
+notebook/
+.ipynb_checkpoints
+
+# input data, saved log, checkpoints
+data/audio
+saved_final/
+datasets/
+
+# editor, os cache directory
+.vscode/
+__MACOSX/
